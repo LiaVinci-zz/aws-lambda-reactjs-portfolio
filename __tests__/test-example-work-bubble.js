@@ -24,8 +24,10 @@ const myWork = [
   }
 ]
 
+let mockOpenModalFn = jest.fn()
+
 describe("ExampleWorkBubble component", () => {
-  let component = shallow(<ExampleWorkBubble work={ myWork[0] } />)
+  let component = shallow(<ExampleWorkBubble work={ myWork[0] } openModal={ mockOpenModalFn } />)
   let images = component.find("img")
 
   it("Should contain a single 'img' element", () => {
@@ -34,5 +36,11 @@ describe("ExampleWorkBubble component", () => {
 
   it("Should have the image source set correctly", () => {
     expect(images.prop('src')).toEqual(myWork[0].image.src)
+  })
+
+  it("Should call the open modal handler when clicked", () => {
+    component.find(".section__exampleWrapper").simulate('click')
+
+    expect(mockOpenModalFn).toHaveBeenCalled()
   })
 })

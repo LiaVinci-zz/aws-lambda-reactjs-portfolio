@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --env=node --colors --coverage test",
+    "test-watch": "jest --watch --env=node --colors --coverage test",
     "webpack": "webpack",
     "webpack-watch": "webpack --watch"
   },
