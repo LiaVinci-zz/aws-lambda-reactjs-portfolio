@@ -1,0 +1,7 @@
+/* This file is required in order for our tests to run,
+   as we want out tests to run without webpack
+   we need to tell babel how do we want it to run */
+
+{
+  "presets": ["react", "env"]
+}
